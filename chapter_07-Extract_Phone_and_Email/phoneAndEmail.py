@@ -9,7 +9,7 @@ phoneRegex = re.compile(
     (\s|-|\.)?          # Separator
     (\d{3})             # First 3 digits
     (\s|-|\.)           # Separator
-    ({\d{4}})           # Last 4 digits
+    (\d{4})           # Last 4 digits
     )""",
     re.VERBOSE,
 )
@@ -23,6 +23,17 @@ emailRegex = re.compile(
     )""",
     re.VERBOSE,
 )
-# TODO: Find matches in clipboard text.
 
+# Find matches in the clipboard text.
+text = str(pyperclip.paste())
+matches = []
+
+for groups in phoneRegex.findall(text):
+    phoneNum = "-".join([groups[1], groups[3], groups[5]])
+    matches.append(phoneNum)
+
+for groups in emailRegex.findall(text):
+    matches.append(groups[0])
+
+print(matches)
 # TODO: Copy results to the clipboard.
