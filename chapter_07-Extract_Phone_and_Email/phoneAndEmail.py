@@ -13,8 +13,16 @@ phoneRegex = re.compile(
     )""",
     re.VERBOSE,
 )
-# TODO: Create email regex.
 
+emailRegex = re.compile(
+    r"""(
+    [A-Za-z0-9._%+-]+
+    @
+    [A-Za-z0-9.-]+
+    (\.[A-Za-z]{2,4})
+    )""",
+    re.VERBOSE,
+)
 # TODO: Find matches in clipboard text.
 
 # TODO: Copy results to the clipboard.
