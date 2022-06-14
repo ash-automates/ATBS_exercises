@@ -75,7 +75,13 @@ for quizNum in range(35):
 
     # Loop through all 50 states, making a question for each.
     for questionNum in range(50):
-        # TODO: Get right and wrong answers.
+        # Get right and wrong answers.
+        correct_answer = capitals[states[questionNum]]
+        wrong_answers = list(capitals.values())
+        del wrong_answers[wrong_answers.index(correct_answer)]
+        wrong_answers = random.sample(wrong_answers, 3)
+        options = wrong_answers + [correct_answer]
+        random.shuffle(options)
 
         # TODO: Write the question and answer options to the quiz file.
 
