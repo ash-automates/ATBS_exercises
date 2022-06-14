@@ -61,11 +61,13 @@ capitals = {
 # Generate files for 35 random quizzes
 
 for quizNum in range(35):
-
+    # Create the quiz and answer key files.
     quiz_file = open(f"capitals_quiz{quizNum + 1}.txt", "w")
     answers_file = open(f"capitals_quiz{quizNum + 1}_answers.txt", "w")
 
-    # TODO: Write out the header for the quiz.
+    # Write out the header for the quiz.
+    quiz_file.write("Name :\nDate:\nPeriod:\n\n")
+    quiz.write((" " * 20) + f"State capitals Quiz (Form {quizNum + 1})\n\n")
 
     # TODO: Shuffle the order of the states.
 
