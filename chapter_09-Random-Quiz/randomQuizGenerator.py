@@ -67,7 +67,7 @@ for quizNum in range(35):
 
     # Write out the header for the quiz.
     quiz_f.write("Name :\nDate:\nPeriod:\n\n")
-    quiz.write((" " * 20) + f"State capitals Quiz (Form {quizNum + 1})\n\n")
+    quiz_f.write((" " * 20) + f"State capitals Quiz (Form {quizNum + 1})\n\n")
 
     # Shuffle the order of the states.
     states = list(capitals.keys())
