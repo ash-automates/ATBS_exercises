@@ -63,7 +63,7 @@ capitals = {
 for quizNum in range(35):
     # Create the quiz and answer key files.
     quiz_f = open(f"capitals_quiz{quizNum + 1}.txt", "w")
-    answers_file = open(f"capitals_quiz{quizNum + 1}_answers.txt", "w")
+    answers_f = open(f"capitals_quiz{quizNum + 1}_answers.txt", "w")
 
     # Write out the header for the quiz.
     quiz_f.write("Name :\nDate:\nPeriod:\n\n")
@@ -89,6 +89,9 @@ for quizNum in range(35):
             quiz_f.write(f"{'ABCD'[i]}. {options[i]}\n")
         quiz_f.write("\n")
 
-        # TODO: Write the answer key to a file.
+        # Write the answer key to a file.
+        answers_f.write(f"{qsNum + 1}. {'ABCD'[options.index(correct_answer)]}")
 
-        pass
+    # Close the two files.
+    quiz_f.close()
+    answers_f.close()
