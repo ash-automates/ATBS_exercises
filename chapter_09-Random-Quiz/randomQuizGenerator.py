@@ -60,9 +60,10 @@ capitals = {
 
 # Generate files for 35 random quizzes
 
-for i in range(35):
+for quizNum in range(35):
 
-    # TODO: Create the quiz and answer key files.
+    quiz_file = open(f"capitals_quiz{quizNum + 1}.txt", "w")
+    answers_file = open(f"capitals_quiz{quizNum + 1}_answers.txt", "w")
 
     # TODO: Write out the header for the quiz.
 
