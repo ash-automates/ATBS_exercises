@@ -84,7 +84,7 @@ for quizNum in range(35):
         random.shuffle(options)
 
         # Write the question and answer options to the quiz file.
-        quiz_f.write(f"Q{qsNum + 1}. What's the capital of {states.qsNum}?\n")
+        quiz_f.write(f"Q{qsNum + 1}. What's the capital of {states[qsNum]}?\n")
         for i in range(4):
             quiz_f.write(f"{'ABCD'[i]}. {options[i]}\n")
         quiz_f.write("\n")
