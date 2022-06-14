@@ -69,7 +69,9 @@ for quizNum in range(35):
     quiz_file.write("Name :\nDate:\nPeriod:\n\n")
     quiz.write((" " * 20) + f"State capitals Quiz (Form {quizNum + 1})\n\n")
 
-    # TODO: Shuffle the order of the states.
+    # Shuffle the order of the states.
+    states = list(capitals.keys())
+    random.shuffle(states)
 
     # TODO: Loop through all 50 states, making a question for each.
 
