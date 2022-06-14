@@ -73,6 +73,12 @@ for quizNum in range(35):
     states = list(capitals.keys())
     random.shuffle(states)
 
-    # TODO: Loop through all 50 states, making a question for each.
+    # Loop through all 50 states, making a question for each.
+    for questionNum in range(50):
+        # TODO: Get right and wrong answers.
 
-    pass
+        # TODO: Write the question and answer options to the quiz file.
+
+        # TODO: Write the answer key to a file.
+
+        pass
