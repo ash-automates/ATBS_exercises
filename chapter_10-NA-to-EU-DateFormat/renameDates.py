@@ -16,14 +16,18 @@ dateRegex = re.compile(
     re.VERBOSE,
 )
 
-# TODO: Loop over the files in the working directory.
+# Loop over the files in the working directory.
+for filename in os.listdir(os.getcwd()):
+    match = dateRegex.search(filename)
 
-# TODO: Skip files without a date.
+    # Skip files without a date.
+    if match == None:
+        continue
 
-# TODO: Get the different parts of the filename.
+    # TODO: Get the different parts of the filename.
 
-# TODO: Form the European-style filename.
+    # TODO: Form the European-style filename.
 
-# TODO: Get the full, absolute file paths.
+    # TODO: Get the full, absolute file paths.
 
-# TODO: Rename the files.
+    # TODO: Rename the files.
