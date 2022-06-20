@@ -33,6 +33,9 @@ for filename in os.listdir(os.getcwd()):
     # Form the European-style filename.
     euro_version = beforePart + dayPart + "-" + monthPart + "-" + yearPart + afterPart
 
-    # TODO: Get the full, absolute file paths.
+    # Get the full, absolute file paths.
+    current_abs_path = os.path.abspath(".")
+    amer_file_path = os.path.join(current_abs_path, filename)
+    euro_file_path = os.path.join(current_abs_path, euro_version)
 
     # TODO: Rename the files.
