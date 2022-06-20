@@ -38,4 +38,6 @@ for filename in os.listdir(os.getcwd()):
     amer_file_path = os.path.join(current_abs_path, filename)
     euro_file_path = os.path.join(current_abs_path, euro_version)
 
-    # TODO: Rename the files.
+    # Rename the files.
+    print(f"Renaming '{filename}' to '{euro_version}'...")
+    shutil.move(amer_file_path, euro_file_path)
