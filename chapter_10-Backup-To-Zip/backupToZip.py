@@ -16,7 +16,20 @@ def backupToZip(folder):
             break
         count += 1
 
-    # Create the ZIP file.
+    # Create the ZIP file
     print(f"Creating {zip_name}.....")
     back_up = zipfile.ZipFile(zip_name, "w")
-    # TODO: Walk the entire folder tree and compress the files in each folder.
+
+    # Walk the entire folder tree and compress the files in each folder
+    for currentFolder, subFolders, filenames in os.walk(folder):
+        print(f"Adding files in {currentFolder}")
+        back_up.write(currentFolder)
+        for filename in filenames:
+            newBase = os.path.basename(filename) + "_"
+            if filename.startswith(newBase) and filename.endswith(".zip"):
+                continue
+            back_up.write(os.path.join(currentFolder, filename))
+
+    # Close the backup file when done
+    back_up.close()
+    print("Done!")
