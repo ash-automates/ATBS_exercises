@@ -29,7 +29,9 @@ for filename in os.listdir(os.getcwd()):
     dayPart = mo.group(4)
     yearPart = mo.group(6)
     afterPart = mo.group(8)
-    # TODO: Form the European-style filename.
+
+    # Form the European-style filename.
+    euro_version = beforePart + dayPart + "-" + monthPart + "-" + yearPart + afterPart
 
     # TODO: Get the full, absolute file paths.
 
