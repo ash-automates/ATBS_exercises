@@ -10,4 +10,5 @@ if len(sys.argv) > 1:
 else:
     address = pyperclip.paste()
 
-# TODO: Open the web browser to the Google Maps page for the address
+# Open the web browser to the Google Maps page for the address
+webbrowser.open("https://www.google.com/maps/place/" + address)
