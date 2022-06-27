@@ -12,4 +12,8 @@ res.raise_for_status()
 soup = bs4.BeautifulSoup(res.text, "lxml")
 links = soup.select(".package-snippet")
 
-# TODO: Open a browser tab for each result with webbrowser module
+# Open a browser tab for each result with webbrowser module
+numOfPages = min(5, len(links))
+
+for iteration in range(numOfPages):
+    webbrowser.open("https://pypi.org" + links[iteration].get("href"))
