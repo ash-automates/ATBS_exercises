@@ -3,7 +3,9 @@
 
 import requests, os, bs4
 
-# TODO: Create folder to store the comics & store the front page URL in a var
+# Create folder to store the comics & store the front page URL in a var
+url = "https://xkcd.com"
+os.makedirs("xkcdComics", exist_ok=True)
 
 # TODO: Download the page
 
