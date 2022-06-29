@@ -26,7 +26,11 @@ while not url.endswith("#"):
         downloaded = requests.get(comic_link)
         downloaded.raise_for_status()
 
-    # TODO: Save the image to the folder
+    # Save the image to the folder
+    image_file = open(os.path.join("xkcdComics", os.path.basename(comic_link)), "wb")
+    for packet in downloaded.iter_content(100000):
+        image_file.write(packet)
+    image_file.close()
 
     # TODO: Get the Prev button's url
 
