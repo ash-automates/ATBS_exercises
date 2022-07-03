@@ -17,4 +17,5 @@ for rowNum in range(2, sheet.max_row):
         # If it is, update the price in column B
         sheet.cell(row=rowNum, column=2).value = PRICE_UPDATES[produce_name]
 
-# TODO: Save spreadsheet to new file so we don't lose original data
+# Save spreadsheet to new file so we don't lose original data
+wb.save("chapter_13-Update-ProduceSpreadSheet/updatedProduceSales.xlsx")
