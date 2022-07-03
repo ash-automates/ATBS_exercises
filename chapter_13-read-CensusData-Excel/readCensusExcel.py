@@ -4,7 +4,12 @@
 
 import openpyxl, pprint
 
-# TODO: Open and read the cells of an Excel document with the openpyxl module
+output_data = {}
+
+# Open and read the cells of an Excel document with the openpyxl module
+print("Opening workbook....")
+spreadsheet = openpyxl.load_workbook("censuspopdata.xlsx")
+main_sheet = spreadsheet["Population by Census Tract"]
 
 # TODO: Calculate all the tract and population data and store it in a data structure
 
