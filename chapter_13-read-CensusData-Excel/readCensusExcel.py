@@ -29,4 +29,9 @@ for row in range(2, main_sheet.max_row + 1):
     output_data[state][county]["population"] += int(population)
 
 
-# TODO: Write the data to a file with .py extension using the pprint module
+# Write the data to a file with .py extension using the pprint module
+file_name = "census2010.py"
+print(f"Writing results to '{file_name}'")
+results = open(file_name, "w")
+results.write("census_data = " + pprint.pformat(output_data))
+results.close()
