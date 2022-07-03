@@ -14,8 +14,7 @@ sheet = wb["Sheet"]
 for rowNum in range(2, sheet.max_row):
     produce_name = sheet.cell(row=rowNum, column=1).value
     if produce_name in PRICE_UPDATES:
-        pass
+        # If it is, update the price in column B
+        sheet.cell(row=rowNum, column=2).value = PRICE_UPDATES[produce_name]
 
-        # TODO: If it is, update the price in column B
-
-        # TODO: Save spreadsheet to new file so we don't lose original data
+# TODO: Save spreadsheet to new file so we don't lose original data
