@@ -8,10 +8,8 @@ output_data = {}
 
 # Open and read the cells of the Excel document with the openpyxl module
 print("Opening workbook....")
-spreadsheet = openpyxl.load_workbook(
-    "chapter_13-read-CensusData-Excel/censuspopdata.xlsx"
-)
-main_sheet = spreadsheet["Population by Census Tract"]
+wb = openpyxl.load_workbook("chapter_13-read-CensusData-Excel/censuspopdata.xlsx")
+main_sheet = wb["Population by Census Tract"]
 
 # Calculate all the tract and population data and store it in a data structure
 for row in range(2, main_sheet.max_row + 1):
