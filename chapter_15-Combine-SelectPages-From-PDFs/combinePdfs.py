@@ -14,7 +14,8 @@ for file_name in os.listdir("."):
 # Sort the filenames so the PDFs are added in order
 pdf_files.sort(key=str.lower)
 
-# TODO: Create a PdfFileWriter object for the output PDF
+# Create a PdfFileWriter object for the output PDF
+output = PyPDF2.PdfFileWriter()
 
 # TODO: Loop through all the PDF files
 
