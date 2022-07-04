@@ -27,4 +27,7 @@ for pdf_file in pdf_files:
         page_to_add = pdf_reader.getPage(page_num)
         output.addPage(page_to_add)
 
-# TODO: Save the resulting PDF to a file
+# Save the resulting PDF to a file
+output_file = open("merged.pdf", "wb")
+output.write(output_file)
+output_file.close()
