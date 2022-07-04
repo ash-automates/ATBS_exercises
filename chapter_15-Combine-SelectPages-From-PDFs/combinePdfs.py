@@ -17,8 +17,10 @@ pdf_files.sort(key=str.lower)
 # Create a PdfFileWriter object for the output PDF
 output = PyPDF2.PdfFileWriter()
 
-# TODO: Loop through all the PDF files
-
-# TODO: Loop through all the pages (except the first) and add them
+# Loop through all the PDF files
+for pdf_file in pdf_files:
+    file_object = open(pdf_file, "rb")
+    pdf_reader = PyPDF2.PdfFileReader(file_object)
+    # TODO: Loop through all the pages (except the first) and add them
 
 # TODO: Save the resulting PDF to a file
