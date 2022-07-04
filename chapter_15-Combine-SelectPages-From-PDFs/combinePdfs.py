@@ -4,7 +4,12 @@
 
 import PyPDF2, os
 
-# TODO: Get all the PDF filenames
+# Get all the PDF filenames from the current directory
+pdf_files = []
+
+for file_name in os.listdir("."):
+    if file_name.endswith(".pdf"):
+        pdf_files.append(file_name)
 
 # TODO: Sort the filenames so the PDFs are added in order
 
