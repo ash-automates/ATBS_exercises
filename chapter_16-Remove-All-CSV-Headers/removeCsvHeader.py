@@ -22,4 +22,9 @@ for file_name in os.listdir("."):
         copied_rows.append(row)
     csv_file_object.close()
 
-    # TODO: Write out the headless CSV file & save it into the folder
+    # Write out the headless CSV file & save it into the folder
+    overwritten_csv_object = open(os.path.join("headless_csv_files", file_name), "w")
+    csv_write_object = csv.writer(overwritten_csv_object)
+    for copied_row in copied_rows:
+        csv_write_object.writerow(copied_row)
+    overwritten_csv_object.close()
