@@ -11,7 +11,8 @@ for file_name in os.listdir("."):
     if file_name.endswith(".pdf"):
         pdf_files.append(file_name)
 
-# TODO: Sort the filenames so the PDFs are added in order
+# Sort the filenames so the PDFs are added in order
+pdf_files.sort(key=str.lower)
 
 # TODO: Create a PdfFileWriter object for the output PDF
 
