@@ -4,7 +4,8 @@
 
 import csv, os
 
-# TODO: Create a folder for the headless CSV files to be stored in
+# Create a folder for the headless CSV files to be stored in
+os.makedirs("headless CSVs", exist_ok=True)
 
 # TODO: Loop through every file in the current working directory & skip non-CSV files
 
