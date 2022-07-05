@@ -6,7 +6,11 @@ import sys, pathlib, os, json, requests
 # get an API key from openweathermap.org and save it to "OpenWeather-API.txt" in home folder
 API_KEY = open(os.path.join(pathlib.Path.home(), "OpenWeather-API.txt")).read()
 
-# TODO: Compute location from command line arguments
+# Compute location from command line arguments & store it in a variable
+if len(sys.argv) < 2:
+    print("Usage: getOpenWeather.py city_name, 2-letter_country_code")
+    sys.exit()
+location = " ".join(sys.argv[1:])
 
 # TODO: Download the JSON data from OpenWeatherMap.org's API
 
