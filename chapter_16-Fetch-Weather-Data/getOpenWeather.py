@@ -17,4 +17,14 @@ url = f"https://api.openweathermap.org/data/2.5/forecast/daily?q={location}&cnt=
 res = requests.get(url)
 res.raise_for_status()
 
-# TODO: Load JSON data into a Python variable
+# Load JSON data into a variable & Print weather descriptions into terminal
+weatherData = json.loads(res.text)
+w = weatherData["list"]
+print("Current weather in %s:" % (location))
+print(w[0]["weather"][0]["main"], "-", w[0]["weather"][0]["description"])
+print()
+print("Tomorrow:")
+print(w[1]["weather"][0]["main"], "-", w[1]["weather"][0]["description"])
+print()
+print("Day after tomorrow:")
+print(w[2]["weather"][0]["main"], "-", w[2]["weather"][0]["description"])
