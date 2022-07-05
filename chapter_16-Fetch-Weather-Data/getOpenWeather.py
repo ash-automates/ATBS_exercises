@@ -13,13 +13,14 @@ if len(sys.argv) < 2:
 location = " ".join(sys.argv[1:])
 
 # Download the JSON data from OpenWeatherMap.org's API
-url = f"https://api.openweathermap.org/data/2.5/forecast/daily?q={location}&cnt=3&APPID={KEY}"
+url = f"http://api.openweathermap.org/data/2.5/forecast?q={location}&cnt=3&APPID={KEY}"
 res = requests.get(url)
 res.raise_for_status()
 
 # Load JSON data into a variable & Print weather descriptions into terminal
-weatherData = json.loads(res.text)
-w = weatherData["list"]
+weather_data = json.loads(res.text)
+w = weather_data["list"]
+
 print("Current weather in %s:" % (location))
 print(w[0]["weather"][0]["main"], "-", w[0]["weather"][0]["description"])
 print()
