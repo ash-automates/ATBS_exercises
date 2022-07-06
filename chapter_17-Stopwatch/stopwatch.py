@@ -12,4 +12,14 @@ start = time.time()
 last_record = start
 lap = 1
 
-# TODO: Write a loop to track the lap times & handle keyboard interrupt error
+# Write a loop to track the lap times & handle keyboard interrupt error
+try:
+    while True:
+        input()
+        lap_time = round(time.time() - last_record, 2)
+        total_time = round(time.time() - start, 2)
+        print(f"LAP TIME: {lap_time} - TOTAL TIME: {total_time} - LAP: {lap}")
+        lap += 1
+        last_record = time.time()
+except KeyboardInterrupt:
+    print("\nDone!")
